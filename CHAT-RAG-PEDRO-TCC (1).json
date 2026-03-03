@@ -1,0 +1,1814 @@
+{
+  "name": "CHAT-RAG-PEDRO-TCC",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2912,
+        288
+      ],
+      "id": "9efb0bf8-9a64-41dd-8a86-50e738149cf4",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "responsesApiEnabled": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2368,
+        288
+      ],
+      "id": "047443a1-3808-464e-874c-84dc7577338c",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1792,
+        224
+      ],
+      "id": "e4dfab15-76a8-4109-9e84-ec29cd9187d3",
+      "name": "Embeddings OpenAI2",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -208,
+        112
+      ],
+      "id": "99531006-f4e6-4152-bcef-ec38ea187e10",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1392,
+        -256
+      ],
+      "id": "640c03b4-9b79-445b-af85-e73b21cbec58",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -1344,
+        224
+      ],
+      "id": "2969378c-2a78-4454-bcb5-8418cc45d502",
+      "name": "OpenAI Chat Model3",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1216,
+        224
+      ],
+      "id": "03ab227a-8a69-430e-8a55-3d26d182e36c",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2096,
+        -240
+      ],
+      "id": "faf8eb03-1d8b-473a-8824-4a7522293f76",
+      "name": "OpenAI Chat Model4",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -160,
+        -336
+      ],
+      "id": "7368f647-452d-4d13-a388-6d14f513cd25",
+      "name": "OpenAI Chat Model5",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -48,
+        -320
+      ],
+      "id": "ca7a8c0f-eadc-4288-87f1-69e487e81b28",
+      "name": "Simple Memory2"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -640,
+        1040
+      ],
+      "id": "4a7903c7-803e-4132-9c08-b4e8ec170b2a",
+      "name": "OpenAI Chat Model6",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -544,
+        1040
+      ],
+      "id": "089d548f-c25b-43c5-8e42-8a61e3bb0f65",
+      "name": "Simple Memory3"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        3008,
+        288
+      ],
+      "id": "8cb40ba1-9960-4ebd-bbf9-9fcd648434bf",
+      "name": "Simple Memory4"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2464,
+        -272
+      ],
+      "id": "fcf8240d-e906-4a3e-8f00-ce5a820e647c",
+      "name": "OpenAI Chat Model7",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 0
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2576,
+        -256
+      ],
+      "id": "8f971167-9bbc-442c-a974-ebad52fa1966",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 0
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -112,
+        112
+      ],
+      "id": "a82377f3-a483-4ccb-9dd3-b18f92e51313",
+      "name": "Simple Memory5"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -208,
+        608
+      ],
+      "id": "f1c18e5c-9c7a-4bef-acfe-12f16d431308",
+      "name": "Simple Memory6"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -304,
+        608
+      ],
+      "id": "9fe18492-9334-427d-85be-a31d4e1f6685",
+      "name": "OpenAI Chat Model8",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        512,
+        1040
+      ],
+      "id": "7bd38c20-e3c2-4993-9853-1f9ba6511a7d",
+      "name": "OpenAI Chat Model9",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        656,
+        592
+      ],
+      "id": "cb181b4d-dbd8-4835-a0fc-c3b138f205e0",
+      "name": "OpenAI Chat Model10",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        736,
+        592
+      ],
+      "id": "1a2b8433-95a0-4a56-b676-9081bbb1c571",
+      "name": "Simple Memory7"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"intencao\": \"VALOR\",\n  \"confianca\": \"alta|media|baixa\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1072,
+        208
+      ],
+      "id": "1e8ae4f5-e945-4a88-9dc4-ad02a6e7b1a6",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Olá!  Sou o assistente do IFBA",
+        "options": {
+          "allowedOrigins": "*",
+          "inputPlaceholder": "Digite sua dúvida aqui...",
+          "subtitle": "Campus Porto Seguro-24/7",
+          "title": "Assistente Virtual IFBA",
+          "customCss": ":root {\n  /* --- CORES DO IFBA --- */\n  --chat--color-primary: #32A041; \n  --chat--color-primary-shade-50: #2a8a37;\n  --chat--color-primary-shade-100: #21702b;\n  --chat--color-white: #ffffff;\n  --chat--color-light: #f4f6f9;\n  --chat--color-dark: #1F2228; \n\n  /* --- DIMENSÕES --- */\n  --chat--window--width: 380px;\n  --chat--window--height: 600px;\n  --chat--border-radius: 0.5rem;\n\n  /* --- CABEÇALHO --- */\n  --chat--header--padding: 1.5rem 1.5rem 1.5rem 4.5rem; \n  --chat--header--background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Logotipo_IFET.svg/1200px-Logotipo_IFET.svg.png') left 1.5rem center / 35px no-repeat var(--chat--color-primary);\n  --chat--header--color: var(--chat--color-white);\n\n  /* --- MENSAGENS --- */\n  --chat--message--user--background: var(--chat--color-primary); \n  --chat--message--user--color: var(--chat--color-white);\n  --chat--message--bot--background: var(--chat--color-white);\n  --chat--message--bot--color: var(--chat--color-dark);\n\n  /* --- ÁREA DE DIGITAÇÃO --- */\n  --chat--input--background: var(--chat--color-white);\n  --chat--input--left--panel--width: 0px !important; /* Mata o espaço da esquerda */\n}\n\n/* FORÇANDO O TEXTAREA E O CONTAINER */\n.n8n-chat-input-container {\n    width: 100% !important;\n    max-width: 100% !important;\n    padding: 0 !important;\n}\n\n.n8n-chat-input textarea[data-test-id=\"chat-input\"] {\n    width: 100% !important;      /* Ignora o inline style */\n    min-width: 100% !important;  /* Garante o preenchimento */\n    color: #1F2228 !important;   /* Texto visível */\n    background-color: #ffffff !important;\n    border: none !important;\n    outline: none !important;\n}\n\n/* Ajuste das bolhas de mensagem */\n.chat-message {\n    max-width: 85% !important;\n}",
+          "responseMode": "lastNode"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -1792,
+        -64
+      ],
+      "id": "a17747c1-bb6f-491e-a92d-4721698f00b5",
+      "name": "RECEBE-ENVIA-MENSAGEM",
+      "webhookId": "cb0bc100-49da-4dc2-8d3f-26e5ddac9b07"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4b5a5794-36fd-4da0-bb17-c3f69942eed1",
+              "name": "mensagem",
+              "value": "={{ $json.chatInput }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1568,
+        -64
+      ],
+      "id": "04672a8b-9a79-4a86-b3b2-45836271281c",
+      "name": "DEFINE-MENSAGEM"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.mensagem }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=### SEMPRE RETORNE ESSE FORMATO FINAL (JSON)\nRETORNE APENAS O JSON:\n{\n  \"intencao\": \"VALOR\",\n  \"confianca\": \"alta|media|baixa\"\n}\n\n# PERSONA\nVocê é um Orquestrador de Conversa (Intent Classifier).\nSua função é analisar o **HISTÓRICO DA CONVERSA** e a **MENSAGEM ATUAL** para classificar a intenção.\n\n# OBJETIVO\nClassificar a entrada atual em uma das categorias abaixo, retornando um JSON.\n\n# INSTRUÇÃO DE MEMÓRIA CRÍTICA (LEIA COM ATENÇÃO)\n1. O Assistente pediu um dado específico? (Ex: \"Qual o ano?\")\n   -> Se o usuário respondeu com a informação (Ex: \"2024\"), classifique como `PERGUNTA` (pois ativa busca).\n\n2. O Assistente deu opções fechadas? (Ex: \"Opção 1 ou 2?\")\n   -> Se o usuário apenas selecionou (Ex: \"1\"), classifique como `OUTROS`.\n\n# CATEGORIAS DE INTENÇÃO\n\n1. `SAUDACAO`:\n   - Cumprimentos iniciais (\"oi\", \"olá\", \"bom dia\") sem dúvidas anexadas.\n\n2. `PERGUNTA`:\n   - O usuário inicia um novo tópico ou dúvida.\n   - O usuário fornece dados para uma busca pendente.\n\n3. `AGRADECIMENTO` (Inclui Satisfação e Encerramento):\n   - Expressões de gratidão: \"Obrigado\", \"Valeu\", \"Grato\", \"Gratidão\", \"Agradecido\".\n   - Expressões de satisfação/elogio: \"Top\", \"Muito top\", \"Show\", \"Brabo\", \"Perfeito\".\n   - Expressões de entendimento conclusivo (sem nova dúvida): \"Entendi\", \"Compreendi\", \"Ah blz\", \"Saquei\", \"Ata\", \"Tendi\".\n\n4. `OUTROS`:\n   - Concordâncias operacionais curtas para o bot prosseguir: \"Ok\", \"Pode ser\", \"Sim\", \"Não\", \"Esse\", \"Esse mesmo\", \"O próprio\", \"Pode\" ou qualquer coisa desse tipo.\n   - Seleção de menu numérico: \"Opção 2\", \"1\".\n\n### FORMATO FINAL (JSON)\nRETORNE APENAS O JSON:\n{\n  \"intencao\": \"VALOR\",\n  \"confianca\": \"alta|media|baixa\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -1360,
+        -64
+      ],
+      "id": "7d12128e-6b4c-4ee0-8fc4-45b78439a774",
+      "name": "ANALISADOR-INTENÇÃO"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "801f71b0-5718-42d1-9ce9-365c4427dce4",
+              "name": "output",
+              "value": "={{ $json.output }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -944,
+        -64
+      ],
+      "id": "6fe04aed-c268-46fe-a0ea-78eeb87596b9",
+      "name": "CONVERTE OBJETO"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.intencao }}",
+                    "rightValue": "SAUDACAO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "9ea641fd-f9b2-4eb3-b4b9-f3fa55a57bd2"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "SAUDACAO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c77f04da-4790-4247-9110-65f02266b628",
+                    "leftValue": "={{ $json.output.intencao }}",
+                    "rightValue": "PERGUNTA",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "PERGUNTA"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fb721521-cb14-4d5a-be60-614eb9867780",
+                    "leftValue": "={{ $json.output.intencao }}",
+                    "rightValue": "AGRADECIMENTO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "AGRADECIMENTO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c2f04926-44f2-4a7a-809e-d10eaa54d41e",
+                    "leftValue": "={{ $json.output.intencao }}",
+                    "rightValue": "OUTROS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "OUTROS"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -688,
+        -112
+      ],
+      "id": "c0b8bf86-fd29-4aed-8e40-53a0b6b6d166",
+      "name": "RAMIFICA INTENÇÕES"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('DEFINE-MENSAGEM').first().json.mensagem }}",
+        "options": {
+          "systemMessage": "# PERSONA\nVocê é o **Módulo de Boas-Vindas do Assistente Virtual do IFBA**. Sua única função é realizar o primeiro contato, sendo o rosto receptivo da instituição.\n\n# CONTEXTO DE ATUAÇÃO\nVocê é ativado pelo classificador de intenções assim que uma saudação é detectada. Seu papel é acolher o usuário e prepará-lo para a interação com a base de dados do IFBA.\n\n# DIRETRIZES DE COMPORTAMENTO\n\n## 1. Saudação Institucional\n- Inicie com uma saudação educada e acolhedora (Ex: \"Olá! Seja muito bem-vindo(a) ao atendimento virtual do IFBA.\").\n- Identifique-se como o assistente oficial para consultas de documentos.\n\n## 2. Gestão de Incerteza e Conforto\n- Transmita tranquilidade ao usuário: informe que ele não precisa se preocupar caso não saiba o nome exato do documento que procura.\n- **Mensagem Chave:** Garanta ao usuário que você tem acesso direto à base de documentos do IFBA e que o ajudará a localizar a informação correta assim que ele descrever sua dúvida.\n\n## 3. Estilo e Tom de Voz\n- **Tom:** Profissional, prestativo e humano (evite respostas puramente robóticas).\n- **Clareza:** Use frases curtas e diretas.\n- **Incentivo:** Finalize sempre encorajando o usuário a enviar sua dúvida ou descrever o que ele precisa saber.\n\n# REGRAS DE OURO (RESTRIÇÕES)\n- **NÃO liste exemplos de documentos ou categorias.** - **NÃO tente responder dúvidas técnicas nesta etapa.** - **NÃO mencione termos técnicos do sistema (como RAG ou n8n).**\n\n# EXEMPLO DE RESPOSTA ESPERADA\n\"Olá! É um prazer receber você no portal de informações do IFBA. 🎓\n\nEu sou seu assistente virtual e estou aqui para te ajudar com as normas e documentos da nossa instituição. Se você não souber exatamente qual documento procurar, fique tranquilo: eu tenho acesso à nossa base oficial e estou pronto para localizar o que você precisa.\n\nComo posso te ajudar agora?\""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -160,
+        -496
+      ],
+      "id": "1471a8e0-37a7-4f7a-8df7-1213425c855c",
+      "name": "AGENTE SAUDAÇÕES"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('DEFINE-MENSAGEM').item.json.mensagem }}",
+        "options": {
+          "systemMessage": "=# ROLE\nVocê é um motor de processamento de linguagem natural  Sua única função é extrair metadados \n\n# OBJETIVO\nAnalisar a mensagem do usuário e decidir se há um filtro de documento específico ou se é uma pergunta genérica, retornando um objeto JSON plano.\n\n# PROTEÇÃO CONTRA ALUCINAÇÃO DE FORMATO (CRÍTICO)\n1. **IGNORAR ARTEFATOS DE SISTEMA:** No histórico de conversa, você poderá ver mensagens estruturadas contendo chaves como `\"action\": \"parse\"`, `\"text\"`, `\"output\"` ou `\"agent\"`.\n2. **REGRA DE OURO:** Esses são logs internos. **NUNCA** replique essa estrutura.\n3. **SEU OUTPUT:** Deve ser SEMPRE um JSON plano, começando imediatamente com a chave `{ \"tem_filtro\": ... }`.\n\n# LÓGICA DE RACIOCÍNIO\n\n1. **ANÁLISE FAST-TRACK (Prioridade Máxima):**\n   - A mensagem atual contém um ID explícito de edital/chamada (ex: \"10/2024\", \"02/23\")?\n   - SE SIM: Ignore o histórico. O `termo_filtro` é esse ID e o `contexto_agregado` é a mensagem atual.\n\n2. **ANÁLISE CONTEXTUAL (Apenas se Fast-Track falhar):**\n   - Se a mensagem atual não tem ID, olhe o histórico.\n   - O usuário está se referindo a algo anterior (ex: \"e sobre o edital anterior?\", \"quais os prazos dele?\")?\n   - SE SIM: Recupere o ID do contexto e funda as intenções.\n\n3. **NORMALIZAÇÃO:**\n   - O `termo_filtro` deve ser estritamente \"NÚMERO/ANO\" ou `null`.\n\n# EXEMPLOS POSITIVOS (Siga estritamente este padrão)\n\n[User]: \"Qual o valor da bolsa no Edital 10/2024?\"\n[Assistant]:\n{\n  \"tem_filtro\": true,\n  \"termo_filtro\": \"10/2024\",\n  \"contexto_agregado\": \"Qual o valor da bolsa no Edital 10/2024?\",\n  \"raciocinio\": \"Filtro explícito encontrado na mensagem atual.\"\n}\n\n[User]: \"E como faço a inscrição?\" (Assumindo histórico sobre Edital 05/2023)\n[Assistant]:\n{\n  \"tem_filtro\": true,\n  \"termo_filtro\": \"05/2023\",\n  \"contexto_agregado\": \"Como faço a inscrição no Edital 05/2023?\",\n  \"raciocinio\": \"Filtro recuperado do histórico e aplicado à pergunta atual.\"\n}\n\n[User]: \"Olá, tudo bem?\"\n[Assistant]:\n{\n  \"tem_filtro\": false,\n  \"termo_filtro\": null,\n  \"contexto_agregado\": \"Olá, tudo bem?\",\n  \"raciocinio\": \"Conversa casual, sem intenção de busca.\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -208,
+        -96
+      ],
+      "id": "9ef46270-84e1-40a6-8d69-3e68d4cb42ea",
+      "name": "GENERICO-OU-NÃO GENERICO"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "57605f7b-5671-46cc-a25a-7a34b9cd1256",
+              "name": "output",
+              "value": "={{ $json.output }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        176,
+        -96
+      ],
+      "id": "dbf9eb6d-38f3-40b6-a783-37fbb131bd7a",
+      "name": "CONVERTE OBJETO-2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bc9bb97b-d5e9-4150-9476-7f374f1c6c44",
+              "leftValue": "={{ $json.output.tem_filtro }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        -96
+      ],
+      "id": "ae762c1b-22dd-4207-a06c-d50763315f77",
+      "name": "SIM OU NÃO"
+    },
+    {
+      "parameters": {
+        "useCustomSchema": true,
+        "operation": "getAll",
+        "tableId": "arquivos"
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        816,
+        -448
+      ],
+      "id": "0e3931f9-d0df-4249-982c-911292fdd8f1",
+      "name": "PEGA QUANTIDADE DE DOCUMENTOS",
+      "executeOnce": false,
+      "credentials": {
+        "supabaseApi": {
+          "id": "M0oJTzMge15367k4",
+          "name": "Supabase-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a4ff2e1f-9f4c-4118-a3ef-d34c032bca38",
+              "name": "qtd_arquivos",
+              "value": "={{ $('PEGA QUANTIDADE DE DOCUMENTOS').all().length}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1072,
+        -432
+      ],
+      "id": "af179cd9-dee7-47a9-87b6-7b35e7cdbb54",
+      "name": "DEFINE QUANTIDADE",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "mode": "load",
+        "tableName": {
+          "__rl": true,
+          "value": "rpc/match_documents",
+          "mode": "list",
+          "cachedResultName": "rpc/match_documents"
+        },
+        "prompt": "={{ $('CONVERTE OBJETO-2').item.json.output.contexto_agregado }}",
+        "topK": "={{ $('DEFINE QUANTIDADE').first().json.qtd_arquivos * 3 }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.3,
+      "position": [
+        1392,
+        -432
+      ],
+      "id": "4e63b0d0-b00a-42fb-a8e4-288e0e15d84f",
+      "name": "RETORNA DOCUMENTOS PROVÁVEIS",
+      "credentials": {
+        "supabaseApi": {
+          "id": "M0oJTzMge15367k4",
+          "name": "Supabase-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// ==========================================================\n// CONFIGURAÇÕES\n// ==========================================================\n\n// 1. Régua de Acurácia (Score Mínimo)\n// Qualquer trecho abaixo disso será ignorado, não importa de qual documento seja.\nconst MIN_SCORE = 0.60; \n\n// 2. Teto de repetição POR ARQUIVO (Diversidade)\n// Exemplo: Se o \"Edital 29\" tiver 10 trechos bons, pegamos só os 3 melhores dele.\n// Se o \"Chamada 10\" tiver mais 3 trechos bons, pegamos os 3 dele também.\n// No total você teria 6 trechos na saída.\nconst MAX_CHUNKS_PER_FILE = 3; \n\n// ==========================================================\n// LÓGICA DE FILTRAGEM (Rerank)\n// ==========================================================\n\nconst items = $input.all();\nconst rawData = items.map(item => item.json);\n\n// Passo 1: Filtrar TUDO que tem score baixo (limpeza geral)\n// Se tiver 50 documentos acima de 0.60, os 50 passam aqui.\nlet passedThreshold = rawData.filter(item => item.score >= MIN_SCORE);\n\n// Passo 2: Limitar a quantidade de pedaços de um MESMO arquivo\nconst finalDocuments = [];\nconst docCounter = {}; // Contador para controlar cada arquivo individualmente\n\nfor (const item of passedThreshold) {\n    // Identifica o arquivo único pelo ID (ou nome se não tiver ID)\n    // Isso garante que o Edital A seja tratado diferente do Edital B\n    const uniqueId = item.document?.metadata?.file_id || item.document?.metadata?.nome_arquivo || 'desconhecido';\n\n    // Inicializa o contador desse arquivo específico se for a primeira vez que ele aparece\n    if (!docCounter[uniqueId]) {\n        docCounter[uniqueId] = 0;\n    }\n\n    // A mágica acontece aqui:\n    // Se esse arquivo específico (ex: Edital A) ainda não atingiu o limite de 3 chunks, adiciona.\n    // Se o Edital A estourou o limite, ignoramos ele, MAS continuamos o loop para ver se aparece o Edital B.\n    if (docCounter[uniqueId] < MAX_CHUNKS_PER_FILE) {\n        finalDocuments.push(item);\n        docCounter[uniqueId]++; // Conta +1 chunk para esse arquivo\n    }\n}\n\n// Passo 3: Reordenar o resultado final pelo Score (Melhores primeiro)\nfinalDocuments.sort((a, b) => b.score - a.score);\n\n// ==========================================================\n// RETORNO\n// ==========================================================\nreturn [\n    {\n        json: {\n            documents: finalDocuments,\n            stats: {\n                total_analisado: rawData.length,\n                total_aprovado: finalDocuments.length,\n                docs_distintos_encontrados: Object.keys(docCounter).length\n            }\n        }\n    }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1824,
+        -432
+      ],
+      "id": "0aff9b8f-73b3-4ec1-82f0-145503b074ed",
+      "name": "REGUA DE DOCUMENTOS"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<pergunta_usuario>\n{{ $('DEFINE-MENSAGEM').first().json.mensagem }}\n</pergunta_usuario>\n\n<chunks_recuperados>\n{{ $json.documents.toJsonString() }}\n</chunks_recuperados>\n\nAnalise ",
+        "options": {
+          "systemMessage": "=# PERSONA\nVocê é um Auditor de Relevância Documental e Extrator de Metadados.\nSua missão é analisar uma lista de fragmentos de texto (chunks) recuperados de uma busca vetorial e identificar quais documentos originais são **semanticamente relevantes** para responder à pergunta do usuário.\n\n# ENTRADA\nVocê receberá:\n1. Uma `pergunta` do usuário.\n2. Uma lista de `chunks` (objetos JSON contendo `pageContent` e `metadata`).\n\n# PROTOCOLO DE ANÁLISE (Step-by-Step)\n\n## PASSO 1: FILTRAGEM RIGOROSA (Relevância)\nPara cada chunk, pergunte-se: \"O texto deste fragmento ajuda a responder, explicar ou contextualizar a pergunta do usuário?\"\n- **Se SIM:** Marque este chunk como ÚTIL.\n- **Se NÃO:** Descarte este chunk imediatamente (ex: a pergunta é sobre \"inscrição\" e o chunk fala apenas sobre \"pagamento de bolsas\" sem mencionar inscrição).\n\n## PASSO 2: EXTRAÇÃO DE DADOS\nPara cada chunk marcado como ÚTIL, extraia os metadados localizados dentro do objeto `metadata`:\n- **ID do Documento:** Busque preferencialmente em `numero_documento` ou `id`. Se for uma retificação (ex: \"Retificação do Edital 6\"), normalize para o edital pai (\"Edital 6\").\n- **Resumo:** Busque o valor exato do campo `Rs_documento`.\n\n## PASSO 3: CONSOLIDAÇÃO (Deduplicação Inteligente)\nGere a lista final de fontes seguindo estas regras:\n1. **Agrupamento:** Se múltiplos chunks úteis pertencem ao mesmo **ID do Documento**, crie apenas UMA entrada na lista final para esse documento.\n2. **Distinção:** Se dois chunks têm textos parecidos, mas **IDs de Documento diferentes** (ex: \"001/2025\" e \"016/2025\"), trate-os como fontes distintas e mantenha ambos na lista.\n\n# SAÍDA (JSON STRICT)\nRetorne APENAS um objeto JSON com a estrutura abaixo. Não inclua markdown (```json).\n\n{\n  \"tem_resposta\": boolean, // true se pelo menos um chunk for relevante\n  \"fontes_relevantes\": [\n    {\n      \"nome_edital\": string, // O ID/Número do documento extraído (ex: \"6/2025\")\n      \"resumo_metadado\": string // O conteúdo do campo Rs_documento deste edital\n    }\n  ]\n}\n\n# EXEMPLOS DE COMPORTAMENTO (Few-Shot)\n\n<pergunta> \"Como funciona a inscrição?\"\n<chunks>\n[\n  { \"text\": \"Preencher formulário no link X.\", \"meta\": { \"numero_documento\": \"6/2025\", \"Rs_documento\": \"Seleção PartiuIF\" } },\n  { \"text\": \"O candidato deve enviar RG e CPF.\", \"meta\": { \"numero_documento\": \"6/2025\", \"Rs_documento\": \"Seleção PartiuIF\" } },\n  { \"text\": \"A matrícula será cancelada se...\", \"meta\": { \"numero_documento\": \"016/2025\", \"Rs_documento\": \"Vagas Remanescentes\" } },\n  { \"text\": \"O pagamento da bolsa é dia 5.\", \"meta\": { \"numero_documento\": \"99/2025\", \"Rs_documento\": \"Folha de Pagamento\" } }\n]\n<saida_esperada>\n{\n  \"tem_resposta\": true,\n  \"fontes_relevantes\": [\n    { \"nome_edital\": \"6/2025\", \"resumo_metadado\": \"Seleção PartiuIF\" },\n    { \"nome_edital\": \"016/2025\", \"resumo_metadado\": \"Vagas Remanescentes\" }\n  ]\n}\n// NOTA: O edital 6/2025 foi unificado. O edital 99/2025 foi removido pois fala de pagamento, não inscrição.\n\n<pergunta> \"Qual o valor da bolsa?\"\n<chunks>\n[\n  { \"text\": \"Cronograma a definir.\", \"meta\": { \"numero_documento\": \"10/2024\", \"Rs_documento\": \"Edital Geral\" } }\n]\n<saida_esperada>\n{\n  \"tem_resposta\": false,\n  \"fontes_relevantes\": []\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2096,
+        -432
+      ],
+      "id": "c7e959b2-b262-44f2-8ff5-0de3845cd61d",
+      "name": "SELECIONA  CHUNKS",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "=# PERSONA\nVocê é um Mediador de Contexto e Guia de Navegação.\nSua função é receber uma lista técnica de editais encontrados e transformá-la em uma resposta natural para o usuário, oferecendo um \"menu de opções\".\n\n**REGRA DE OURO (SEGURANÇA):**\nVocê NÃO deve responder a pergunta do usuário agora (ex: não dê datas, valores ou regras).\nSeu ÚNICO objetivo é apresentar quais editais foram encontrados e pedir que o usuário escolha ou confirme qual deseja consultar.\n\n# DADOS DE ENTRADA\nVocê receberá um JSON com a seguinte estrutura:\n{\n  \"tem_resposta\": boolean,\n  \"fontes_relevantes\": [\n    { \"nome_edital\": \"...\", \"resumo_metadado\": \"...\" }\n  ]\n}\n\n# LÓGICA DE RESPOSTA (Roteiros)\n\n## CENÁRIO 1: Lista Vazia (`tem_resposta` = false)\nSe a lista `fontes_relevantes` estiver vazia.\n- **Ação:** Peça desculpas e solicite mais detalhes para refinar a busca.\n- **Modelo de Resposta:** \"Não encontrei nenhum edital específico com informações sobre essa dúvida nos documentos atuais. Você saberia me dizer o número do edital ou o ano para eu tentar novamente?\"\n\n## CENÁRIO 2: Documento Único (Lista tem 1 item)\nSe houver apenas 1 objeto em `fontes_relevantes`.\n- **Ação:** Informe que encontrou um documento e use o `resumo_metadado` para dar contexto. Peça confirmação.\n- **Modelo de Resposta:** \"Encontrei informações sobre isso no **[nome_edital]**, que trata de **[resumo_metadado]**. \n  É sobre este documento que você gostaria de saber mais?\"\n\n## CENÁRIO 3: Múltiplos Documentos (Lista tem > 1 item)\nSe houver 2 ou mais objetos em `fontes_relevantes`.\n- **Ação:** Liste as opções encontradas de forma resumida para o usuário desambiguar.\n- **Modelo de Resposta:**\n  \"Encontrei referências a esse tema em [X] editais diferentes. Qual deles você gostaria de consultar?\n  \n  1. **[nome_edital_1]**: [resumo_metadado_1]\n  2. **[nome_edital_2]**: [resumo_metadado_2]\n  (...)\n  \n  Por favor, me diga qual dessas opções é a correta.\"\n\n# ESTILO DE COMUNICAÇÃO\n- Use uma linguagem clara e prestativa.\n- Ao citar o `resumo_metadado`, você pode ajustá-lo levemente para fluir melhor na frase, mas mantenha o sentido original.\n- Mantenha o foco em fazer o usuário **escolher** o documento correto."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2480,
+        -432
+      ],
+      "id": "824c3380-7f50-4f5e-8efe-53f943b44a10",
+      "name": "AGENTE CONVERSASIONAL"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('DEFINE-MENSAGEM').first().json.mensagem }}",
+        "options": {
+          "systemMessage": "=# ROLE\nVocê é um Classificador de Intenção Estrito.\n\n# TAREFA\nAnalise o histórico da conversa e a mensagem atual para classificar a ação do usuário em UMA das categorias abaixo.\nNão extraia dados, apenas classifique.\n\n# CATEGORIAS\n1. **SELECAO_CONFIRMACAO**: O usuário escolhe, confirma ou pede detalhes de um item específico listado anteriormente pelo Bot (Ex: \"quero o primeiro\", \"sim, é o edital 10\", \"fala desse aí\", \"Esse mesmo\", \"O proprio\", \"Ele mesmo\", \"Está certo\").\n2. **NEGACAO**: O usuário rejeita explicitamente as opções apresentadas (Ex: \"Nenhum desses\", \"Não é isso\", \"Não\").\n3. **OUTROS**: Qualquer outra interação, novas perguntas, dúvidas gerais ou assuntos fora do contexto de escolha.\n\n# FORMATO DE SAÍDA (JSON STRICT)\n{\n  \"intencao\": \"SELECAO_CONFIRMACAO\" | \"NEGACAO\" | \"OUTROS\"\n}\n\n# EXEMPLOS\n[Histórico]: Bot: \"Encontrei Edital 10 e 12.\"\n[Atual]: User: \"Quero ver o 10.\"\n>> {\"intencao\": \"SELECAO_CONFIRMACAO\"}\n\n[Histórico]: Bot: \"É o edital 15/2024?\"\n[Atual]: User: \"Não.\"\n>> {\"intencao\": \"NEGACAO\"}\n\n[Histórico]: Bot: \"Encontrei o Edital 10.\"\n[Atual]: User: \"E sobre auxílio transporte?\"\n>> {\"intencao\": \"OUTROS\"}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -304,
+        400
+      ],
+      "id": "879c40d0-ce09-4cf0-a020-dea893ab909e",
+      "name": "CLASSIFICADOR DE INTENÇÃO"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "197066c9-a814-4046-bc4c-a021ffff8251",
+              "name": "output",
+              "value": "={{ $json.output }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        64,
+        400
+      ],
+      "id": "1a2e1c1b-fef9-453a-a332-0070ed67a420",
+      "name": "CONVERTE-OBJETO-2"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.intencao }}",
+                    "rightValue": "OUTROS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "6ee0c52f-5e06-4fb9-abba-78c8621eb1db"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "=OUTROS"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "bb745219-27b1-45b3-a0cb-d60e813d9ea8",
+                    "leftValue": "={{ $json.output.intencao }}",
+                    "rightValue": "SELECAO_CONFIRMACAO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "SELECAO_CONFIRMACAO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "45b3f01a-5f58-4189-a4d3-73792a46b44f",
+                    "leftValue": "={{ $json.output.intencao }}",
+                    "rightValue": "NEGACAO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NEGACAO"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        336,
+        384
+      ],
+      "id": "151bb04e-49c1-4659-a346-28bf1a13e0a8",
+      "name": "RAMIFICA INTENÇÃO"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('DEFINE-MENSAGEM').item.json.mensagem }}",
+        "options": {
+          "systemMessage": "=# SEMPRE RESPONDA NESSE FORMATO DE SAÍDA (JSON STRICT)\n{\n  \"dados_selecao\": {\n      \"termo_filtro\": \"string (ex: 12/2024)\", \n      \"intencao_especifica\": \"string (resumo contextual)\"\n  }\n}\n\n# ROLE\nVocê é um Especialista em Extração de Entidades e Fusão de Contexto.\n\n# CONTEXTO\nO usuário acabou de selecionar um documento específico na conversa.\nSua missão é:\n1. Identificar qual documento exato foi escolhido (Resolvendo referências como \"o primeiro\", \"o anterior\").\n2. Sintetizar o motivo da busca original (Contexto Agregado).\n\n# REGRAS DE EXTRAÇÃO\n\n1. **termo_filtro (ID DO DOCUMENTO)**:\n   - Formato OBRIGATÓRIO: **\"NUMERO/ANO\"** (Ex: \"10/2024\").\n   - Se o usuário disser \"o primeiro\", olhe a última mensagem do Bot para pegar o número correto.\n   - Remova palavras (Edital, Retificação). Se o ano não for citado, use o ano do contexto (ex: 2024, 2025).\n\n2. **intencao_especifica (CONTEXTO AGREGADO)**:\n   - **CRÍTICO:** Não use apenas a última frase do usuário.\n   - Analise o histórico para recuperar o QUE o usuário estava procurando originalmente (Ex: \"Bolsa\", \"Mestrado\", \"Prazos\").\n   - Combine a **Dúvida Original** + **Documento Selecionado**.\n   - O resultado deve ser uma frase de busca completa.\n\n\n# EXEMPLOS (Few-Shot)\n\n[Cenário 1]\nHistórico User: \"Quais as vagas para Engenharia?\"\nHistórico Bot: \"Achei: 1. Edital 05/2024 (Professor), 2. Edital 08/2024 (Estágio).\"\nUser Atual: \"O segundo.\"\n>> SAÍDA:\n{\n  \"dados_selecao\": {\n      \"termo_filtro\": \"08/2024\",\n      \"intencao_especifica\": \"vagas de estágio para engenharia no edital 08/2024\"\n  }\n}\n\n[Cenário 2]\nHistórico User: \"Sou cotista, tem algo pra mim?\"\nHistórico Bot: \"O Edital 20/2024 trata de cotas.\"\nUser Atual: \"É esse mesmo.\"\n>> SAÍDA:\n{\n  \"dados_selecao\": {\n      \"termo_filtro\": \"20/2024\",\n      \"intencao_especifica\": \"regras e vagas para cotistas no edital 20/2024\"\n  }\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        624,
+        400
+      ],
+      "id": "085ad9d1-f664-4d89-b68e-e58342751a02",
+      "name": "FUSÃO DE CONTEXTO"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "115e675b-5430-4723-9459-770fed61705b",
+              "name": "output",
+              "value": "={{ $json.output }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        928,
+        400
+      ],
+      "id": "cabe595f-3f1b-4a35-90c5-602bd6a0ede8",
+      "name": "CONVERTE - OBJETO-3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1072,
+        48
+      ],
+      "id": "52adba5f-9eb2-41d0-995a-8f6bd3c7ae09",
+      "name": "UNIÃO FLUXOS"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Função curta para evitar erro se o node não existiu\nconst safe = (fn) => { try { return fn(); } catch (e) { return null; } };\n\n// --- CONFIGURAÇÃO ---\n\n// Correção: Fechamos o primeiro safe(), colocamos o || e depois abrimos o segundo safe()\nconst termo = safe(() => $('CONVERTE OBJETO-2').first().json.output.termo_filtro) || $(\"CONVERTE - OBJETO-3\").first().json.output.dados_selecao.termo_filtro ;\n\nconst contexto = safe(() =>$('CONVERTE OBJETO-2').first().json.output.contexto_agregado ) || $(\"CONVERTE - OBJETO-3\").first().json.output.dados_selecao.intencao_especifica;\n\n// --- SAÍDA ---\nreturn {\n  json: {\n    termo_filtro: termo,\n    contexto: contexto\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1328,
+        48
+      ],
+      "id": "933d146d-651a-4347-949e-acdb9b8762d0",
+      "name": "UNIÃO DE VARIÁVEIS"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "92e4b6d1-db90-4211-89e8-98858c451cca",
+              "name": "termo_filtro",
+              "value": "={{ $json.termo_filtro }}",
+              "type": "string"
+            },
+            {
+              "id": "78b1f7a2-07e8-49fd-bfca-b5f3d570e318",
+              "name": "intencao_especifica",
+              "value": "={{ $json.contexto }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1568,
+        48
+      ],
+      "id": "88bee286-5193-4fd1-972d-c83f3748dde4",
+      "name": "DEFINE TERMO_FILTRO-INTENÇÃO"
+    },
+    {
+      "parameters": {
+        "mode": "load",
+        "tableName": {
+          "__rl": true,
+          "value": "documents",
+          "mode": "list",
+          "cachedResultName": "documents"
+        },
+        "prompt": "={{ $json.intencao_especifica }}",
+        "topK": 15,
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "numero_documento",
+                "value": "={{ $json.termo_filtro }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.3,
+      "position": [
+        1792,
+        48
+      ],
+      "id": "4dfe57ff-6801-4bbd-b307-c3f8ec22f322",
+      "name": "RETORNA CHUNKS DO EDITAL SELECIONADO",
+      "credentials": {
+        "supabaseApi": {
+          "id": "M0oJTzMge15367k4",
+          "name": "Supabase-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Pega TODOS os itens que vieram do Supabase\nconst items = $input.all();\n\n// 2. Mapeia para pegar apenas a parte JSON (dados úteis) de cada item\n// Isso preserva 'pageContent', 'metadata', 'score', tudo.\nconst allDocuments = items.map(item => item.json);\n\n// 3. Retorna um ÚNICO objeto contendo a lista\nreturn [\n    {\n        json: {\n            // Aqui você terá um array com todos os resultados preservados\n            documents: allDocuments,\n            \n            // Metadado extra: quantos documentos foram encontrados\n            count: allDocuments.length\n        }\n    }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2144,
+        64
+      ],
+      "id": "dea6685f-3d6c-407e-8e43-c1f8a7f9db88",
+      "name": "CONVERTE EM UMA LISTA ACESSIVEL"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=# TAREFA\nRealize a auditoria e seleção dos trechos abaixo baseando-se na pergunta do usuário.\n\n<pergunta_usuario>\n{{ $('DEFINE TERMO_FILTRO-INTENÇÃO').first().json.intencao_especifica }}\n</pergunta_usuario>\n\n<banco_dados_documentos>\n{{ $json.documents.toJsonString() }}\n</banco_dados_documentos>",
+        "options": {
+          "systemMessage": "=# SAÍDA (JSON STRICT)\nResponda APENAS com este JSON. Não use Markdown.\n\n{\n  \"answer_found\": boolean,\n  \"message\": string | null,\n  \"selected_chunks\": [\n      {\n          \"doc_name\": string | null,\n          \"doc_type\": string | null,\n          \"doc_date\": string | null,\n          \"content\": string | null\n      }\n  ]\n}\n\n# ROLE\nVocê é um Auditor de Respostas e Versionamento para documentos oficiais (Editais e Retificações) do IFBA.\nSua função é analisar uma lista de trechos de documentos (chunks) e selecionar TODOS os trechos necessários para compor uma resposta completa e atualizada à pergunta do usuário.\n\n# ESTRUTURA DE ENTRADA\nVocê receberá dois blocos de informação delimitados por tags XML:\n1. <pergunta_usuario>: A dúvida ou intenção específica do usuário.\n2. <banco_dados_documentos>: Uma lista em formato JSON (Array) contendo os chunks recuperados.\n\n# ALGORITMO DE DECISÃO\n\n## PASSO 1: ANÁLISE SEMÂNTICA (Filtro de Relevância)\nLeia a <pergunta_usuario> e analise o campo `content` de cada chunk.\n- Selecione todos os chunks que contêm informações diretas ou complementares para a resposta.\n- **Descarte** chunks que apenas citam palavras-chave sem responder à dúvida (ex: cita \"isenção\" no sumário, mas não explica as regras).\n\n## PASSO 2: ANÁLISE TEMPORAL E CONSOLIDAÇÃO (Vigência vs. Complemento)\nAo analisar os chunks selecionados no Passo 1, aplique as seguintes regras de ouro:\n\n1. **REGRA DA SUBSTITUIÇÃO (Conflito):**\n   - Se dois chunks falam EXATAMENTE sobre a mesma regra/dado (ex: data da prova) mas divergem, compare a `data_arquivo`.\n   - Mantenha APENAS o chunk mais recente (Retificação substitui Edital). Descarte o antigo.\n\n2. **REGRA DA AGREGAÇÃO (Complemento):**\n   - Se um chunk responde à \"parte A\" da pergunta e outro chunk responde à \"parte B\" (ex: um fala dos documentos e o outro fala do local de entrega), MANTENHA AMBOS.\n   - Se um chunk traz a regra geral e uma Retificação traz um adendo que não anula, mas adiciona informação, MANTENHA AMBOS.\n\n## PASSO 3: FINALIZAÇÃO\n- Se encontrou trechos válidos: Preencha a lista `selected_chunks` com os objetos encontrados e `message` como null.\n- Se NÃO encontrou nada relevante: A lista `selected_chunks` deve ser vazia `[]` e preencha a `message` de aviso.\n\n# REGRAS RÍGIDAS\n1. **INTEGRIDADE:** Não altere, resuma ou reescreva o texto do campo `content`.\n2. **PADRONIZAÇÃO:** Mantenha estritamente a estrutura JSON de saída.\n\n\n\n# EXEMPLOS DE PREENCHIMENTO\n\nCENÁRIO A (Sucesso - Múltiplos Chunks):\n{\n  \"answer_found\": true,\n  \"message\": null,\n  \"selected_chunks\": [\n      {\n          \"doc_name\": \"Edital 10/2024\",\n          \"doc_type\": \"Edital Abertura\",\n          \"doc_date\": \"2024-11-01\",\n          \"content\": \"Os documentos necessários são RG e CPF...\"\n      },\n      {\n          \"doc_name\": \"Edital 10/2024\",\n          \"doc_type\": \"Retificação 01\",\n          \"doc_date\": \"2024-11-15\",\n          \"content\": \"Acrescenta-se à lista de documentos o Comprovante de Residência...\"\n      }\n  ]\n}\n\nCENÁRIO B (Falha):\n{\n  \"answer_found\": false,\n  \"message\": \"Não foi possível encontrar essa informação específica nos documentos analisados.\",\n  \"selected_chunks\": []\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2368,
+        64
+      ],
+      "id": "27173e3c-4a6f-4448-9742-1000c9aa24b2",
+      "name": "SELECIONA CHUNKS CAMPEÕES"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9b412895-22ac-48e2-abed-5877d7e57a17",
+              "name": "output",
+              "value": "={{ $json.output }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2704,
+        64
+      ],
+      "id": "9530ba1d-5ed4-4a4c-ab08-c59b9e7fc6cd",
+      "name": "COVERTE-OBJETOS-4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=# ROLE\nVocê é um assistente virtual do IFBA (Campus Porto Seguro). Sua função é responder ao aluno com base estritamente nos dados fornecidos abaixo.\n\n# DADOS DO SISTEMA\n- **Status da Busca:** {{ $json.output.answer_found }}\n- **Informação Recuperada:** \"\"\"\n{{ $json.output.selected_chunks.toJsonString() }}\n\"\"\"\n\n# PERGUNTA DO USUÁRIO\n\"\"\"\n{{ $('DEFINE TERMO_FILTRO-INTENÇÃO').first().json.intencao_especifica }}\n\"\"\"\n\n# INSTRUÇÕES DE RESPOSTA\nAnalise o \"Status da Busca\":\n\n1. SE Status for **true**:\n   - Responda à pergunta do usuário utilizando as informações em \"Informação Recuperada\".\n   - Seja direto, educado e cite que a informação foi extraída do documento oficial.\n   - Não invente informações que não estejam no texto.\n\n2. SE Status for **false**:\n   - Apenas explique ao usuário que a informação não foi encontrada, utilizando o texto que está em \"Informação Recuperada\" como base.\n   - Não tente responder à pergunta original, pois você não tem dados.",
+        "options": {
+          "systemMessage": "=# PERSONA\nVocê é um Especialista em Respostas de Editais. Sua função é responder à pergunta do usuário baseando-se EXCLUSIVAMENTE no trecho de texto (chunk) fornecido.\n\n# DIRETRIZES DE RESPOSTA\n1. **Objetividade:** Vá direto ao ponto. Não use frases de preenchimento como \"Com base no texto...\".\n2. **Fidelidade:** Se a resposta não estiver no chunk, diga \"A informação solicitada não consta no trecho recuperado.\"\n\n# REGRA CRÍTICA DE DATAS (Prorrogações)\nDocumentos de editais frequentemente listam históricos de alterações de datas (retificações).\nSe o chunk apresentar múltiplas datas para o mesmo evento (ex: inscrições), siga esta lógica:\n- **Início:** Mantenha a data de início original.\n- **Fim:** Considere a data mais FUTURA/RECENTE citada como o prazo final válido.\n- **Interpretação:** Ignore os prazos intermediários que já foram superados.\n\nExemplo de Lógica:\n*Texto:* \"Inscrições de 01/01 a 10/01, prorrogado para 15/01 e depois para 20/01.\"\n*Sua Resposta:* \"As inscrições vão de 01/01 até 20/01.\"\n\n# EXEMPLOS (\"Few-Shot\")\n\n<chunk>\nO período de isenção será de 05/03/2024 a 07/03/2024. Retificação 01: estende-se o prazo de isenção até 09/03/2024.\n</chunk>\n<pergunta> \"Qual o prazo da isenção?\"\n<resposta>\nDe 05/03/2024 até 09/03/2024.\n\n<chunk>\nO resultado preliminar sairá dia 15/04.\n</chunk>\n<pergunta> \"Quando sai o resultado?\"\n<resposta>\nO resultado preliminar está previsto para o dia 15/04."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2912,
+        64
+      ],
+      "id": "d0df688f-2606-444e-8ff6-7c885d2a07f8",
+      "name": "AGENTE CONVERSASIONAL-2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('RECEBE-ENVIA-MENSAGEM').item.json.chatInput }}",
+        "options": {
+          "systemMessage": "Você é um agente do ifba responsável por receber agradecimentos e reponder esse agradecimentos"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -640,
+        832
+      ],
+      "id": "169aac89-fe18-4902-8906-f00dea011a54",
+      "name": "AGENTE DE AGRADECIMENTO"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('CONVERTE-OBJETO-2').item.json.output }}",
+        "options": {
+          "systemMessage": "=# ROLE\nVocê é um Especialista em Refinamento de Busca e Recuperação de Contexto.\n\n# CONTEXTO ATUAL\nO usuário acabou de rejeitar (\"NEGACAO\") os resultados ou documentos apresentados anteriormente pelo sistema.\nSua missão não é pedir desculpas excessivas, mas sim **coletar os dados que faltaram** para realizar uma busca precisa agora.\n\n# OBJETIVO\nGuiar o usuário para que ele forneça parâmetros específicos que diferenciem o documento desejado dos que foram rejeitados.\n\n# DIRETRIZES DE RESPOSTA\n\n1. **Acolhimento Rápido:** Confirme que entendeu que as opções anteriores não serviram (Ex: \"Entendi, vamos buscar novamente.\", \"Certo, vamos filtrar melhor.\").\n\n2. **Investigação Ativa (Solicite Parâmetros):**\n   Você DEVE pedir explicitamente por detalhes que ajudem a filtrar o banco de dados. Tente obter pelo menos 2 dos seguintes pontos:\n   - **Ano/Período:** (Ex: \"Você procura algo de 2024, 2025 ou mais antigo?\")\n   - **Tópico/Assunto:** (Ex: \"É sobre bolsas, matrículas, resultados ou algum auxílio específico?\")\n   - **Tipo de Documento:** (Ex: \"É um edital de abertura, uma retificação ou uma lista de convocação?\")\n\n3. **Tom de Voz:**\n   - Seja direto, prestativo e focado na solução.\n   - Evite perguntas genéricas demais como \"O que você quer?\". Seja específico nas sugestões.\n\n# EXEMPLOS DE COMPORTAMENTO\n\n[Cenário 1]\nHistórico Bot: \"Encontrei Edital 10/2024 (Pibid) e 12/2024 (Residência).\"\nUser: \"Não, nenhum desses.\"\n>> Resposta: \"Certo, vamos refinar a busca. Você sabe me dizer **qual é o ano** desse documento ou **sobre qual assunto** específico ele trata (ex: auxílio estudantil, vagas para professor)?\"\n\n[Cenário 2]\nHistórico Bot: \"É o edital de Monitoria?\"\nUser: \"Não.\"\n>> Resposta: \"Entendido. Para eu achar o correto, você pode me dar mais detalhes? Seria um edital de **Extensão**, **Pesquisa** ou outro tema? Se tiver o número ou o ano, ajuda bastante.\"\n\n[Cenário 3]\nHistórico Bot: \"Achei resultados de 2023.\"\nUser: \"Não é isso, tá velho.\"\n>> Resposta: \"Imaginei. Você está buscando documentos publicados **neste ano (2025)** ou referentes ao **ano passado (2024)**? Me diga também o tema principal para eu filtrar os mais recentes.\""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        512,
+        848
+      ],
+      "id": "6b0e106e-2a85-4e50-8b28-4b52255081f8",
+      "name": "AGENTE DE REFINAMENTO"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AGENTE CONVERSASIONAL-2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "SELECIONA CHUNKS CAMPEÕES",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "RETORNA CHUNKS DO EDITAL SELECIONADO",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "GENERICO-OU-NÃO GENERICO",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "RETORNA DOCUMENTOS PROVÁVEIS",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "ANALISADOR-INTENÇÃO",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "ANALISADOR-INTENÇÃO",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "SELECIONA  CHUNKS",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AGENTE SAUDAÇÕES",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "AGENTE SAUDAÇÕES",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AGENTE DE AGRADECIMENTO",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory3": {
+      "ai_memory": [
+        [
+          {
+            "node": "AGENTE DE AGRADECIMENTO",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory4": {
+      "ai_memory": [
+        [
+          {
+            "node": "AGENTE CONVERSASIONAL-2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model7": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AGENTE CONVERSASIONAL",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AGENTE CONVERSASIONAL",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory5": {
+      "ai_memory": [
+        [
+          {
+            "node": "GENERICO-OU-NÃO GENERICO",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory6": {
+      "ai_memory": [
+        [
+          {
+            "node": "CLASSIFICADOR DE INTENÇÃO",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model8": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "CLASSIFICADOR DE INTENÇÃO",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model9": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AGENTE DE REFINAMENTO",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model10": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "FUSÃO DE CONTEXTO",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory7": {
+      "ai_memory": [
+        [
+          {
+            "node": "FUSÃO DE CONTEXTO",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "ANALISADOR-INTENÇÃO",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RECEBE-ENVIA-MENSAGEM": {
+      "main": [
+        [
+          {
+            "node": "DEFINE-MENSAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DEFINE-MENSAGEM": {
+      "main": [
+        [
+          {
+            "node": "ANALISADOR-INTENÇÃO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ANALISADOR-INTENÇÃO": {
+      "main": [
+        [
+          {
+            "node": "CONVERTE OBJETO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CONVERTE OBJETO": {
+      "main": [
+        [
+          {
+            "node": "RAMIFICA INTENÇÕES",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RAMIFICA INTENÇÕES": {
+      "main": [
+        [
+          {
+            "node": "AGENTE SAUDAÇÕES",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "GENERICO-OU-NÃO GENERICO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AGENTE DE AGRADECIMENTO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "CLASSIFICADOR DE INTENÇÃO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GENERICO-OU-NÃO GENERICO": {
+      "main": [
+        [
+          {
+            "node": "CONVERTE OBJETO-2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CONVERTE OBJETO-2": {
+      "main": [
+        [
+          {
+            "node": "SIM OU NÃO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SIM OU NÃO": {
+      "main": [
+        [
+          {
+            "node": "PEGA QUANTIDADE DE DOCUMENTOS",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "UNIÃO FLUXOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PEGA QUANTIDADE DE DOCUMENTOS": {
+      "main": [
+        [
+          {
+            "node": "DEFINE QUANTIDADE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DEFINE QUANTIDADE": {
+      "main": [
+        [
+          {
+            "node": "RETORNA DOCUMENTOS PROVÁVEIS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RETORNA DOCUMENTOS PROVÁVEIS": {
+      "main": [
+        [
+          {
+            "node": "REGUA DE DOCUMENTOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "REGUA DE DOCUMENTOS": {
+      "main": [
+        [
+          {
+            "node": "SELECIONA  CHUNKS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SELECIONA  CHUNKS": {
+      "main": [
+        [
+          {
+            "node": "AGENTE CONVERSASIONAL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CLASSIFICADOR DE INTENÇÃO": {
+      "main": [
+        [
+          {
+            "node": "CONVERTE-OBJETO-2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CONVERTE-OBJETO-2": {
+      "main": [
+        [
+          {
+            "node": "RAMIFICA INTENÇÃO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RAMIFICA INTENÇÃO": {
+      "main": [
+        [],
+        [
+          {
+            "node": "FUSÃO DE CONTEXTO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AGENTE DE REFINAMENTO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FUSÃO DE CONTEXTO": {
+      "main": [
+        [
+          {
+            "node": "CONVERTE - OBJETO-3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CONVERTE - OBJETO-3": {
+      "main": [
+        [
+          {
+            "node": "UNIÃO FLUXOS",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "UNIÃO FLUXOS": {
+      "main": [
+        [
+          {
+            "node": "UNIÃO DE VARIÁVEIS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UNIÃO DE VARIÁVEIS": {
+      "main": [
+        [
+          {
+            "node": "DEFINE TERMO_FILTRO-INTENÇÃO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DEFINE TERMO_FILTRO-INTENÇÃO": {
+      "main": [
+        [
+          {
+            "node": "RETORNA CHUNKS DO EDITAL SELECIONADO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RETORNA CHUNKS DO EDITAL SELECIONADO": {
+      "main": [
+        [
+          {
+            "node": "CONVERTE EM UMA LISTA ACESSIVEL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CONVERTE EM UMA LISTA ACESSIVEL": {
+      "main": [
+        [
+          {
+            "node": "SELECIONA CHUNKS CAMPEÕES",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SELECIONA CHUNKS CAMPEÕES": {
+      "main": [
+        [
+          {
+            "node": "COVERTE-OBJETOS-4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "COVERTE-OBJETOS-4": {
+      "main": [
+        [
+          {
+            "node": "AGENTE CONVERSASIONAL-2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AGENTE CONVERSASIONAL-2": {
+      "main": [
+        []
+      ]
+    },
+    "AGENTE SAUDAÇÕES": {
+      "main": [
+        []
+      ]
+    },
+    "AGENTE CONVERSASIONAL": {
+      "main": [
+        []
+      ]
+    },
+    "AGENTE DE REFINAMENTO": {
+      "main": [
+        []
+      ]
+    },
+    "AGENTE DE AGRADECIMENTO": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0256ce0b-cf7b-4836-9c18-d3c7348788f4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "869dc54efdb6d05a8a1179e8f9bd330b0aff5a44139076da0474ea57ecf93f39"
+  },
+  "id": "rQ5DqE6dBUScU5xf",
+  "tags": []
+}

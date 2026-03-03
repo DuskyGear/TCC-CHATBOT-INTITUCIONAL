@@ -1,0 +1,1112 @@
+{
+  "name": "GATILHO-DRIVE-PEDRO_TCC",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "insert",
+        "tableName": {
+          "__rl": true,
+          "value": "documents",
+          "mode": "list",
+          "cachedResultName": "documents"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.3,
+      "position": [
+        3632,
+        16
+      ],
+      "id": "468aeb82-0e67-4bf6-8d05-571c041e9b38",
+      "name": "Supabase Vector Store",
+      "credentials": {
+        "supabaseApi": {
+          "id": "M0oJTzMge15367k4",
+          "name": "Supabase-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        3728,
+        336
+      ],
+      "id": "852b1b01-bb0b-49c7-8086-a23ecaaa5987",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $('APLICA MARKDOWN').item.json.markdownText }}",
+        "textSplittingMode": "custom",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "file_id",
+                "value": "={{ $('DEFINE-ID-NOME_ARQUIVO').item.json.id_arquivo }}"
+              },
+              {
+                "name": "nome_arquivo",
+                "value": "={{ $('DEFINE-ID-NOME_ARQUIVO').item.json.nome_arquivo }}"
+              },
+              {
+                "name": "data_arquivo",
+                "value": "={{ $json.output.data_documento }}"
+              },
+              {
+                "name": "tipo_documento",
+                "value": "={{ $json.output.tipo_documento }}"
+              },
+              {
+                "name": "numero_documento",
+                "value": "={{ $json.output.numero_documento }}"
+              },
+              {
+                "name": "nome_padronizado",
+                "value": "={{ $json.output.nome_padronizado }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        4000,
+        160
+      ],
+      "id": "5b7c30a3-14bb-49f7-9c61-f8bd065cd006",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1120,
+        272
+      ],
+      "id": "5bd19d20-85c4-406b-b6f3-37c8513aa81b",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chunkSize": 1200,
+        "chunkOverlap": 250,
+        "options": {
+          "splitCode": "markdown"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        4224,
+        320
+      ],
+      "id": "1e11b50a-5315-4721-899c-153ecee66280",
+      "name": "Recursive Character Text Splitter"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        3584,
+        384
+      ],
+      "id": "5cce73d7-0480-44f4-9abd-200406509069"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2032,
+        272
+      ],
+      "id": "b54f3582-3e12-408d-aec8-3544cee37f1a",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.full_text }}",
+        "textSplittingMode": "custom",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "file_id",
+                "value": "={{ $('DEFINE-ID-NOME_ARQUIVO').item.json.id_arquivo }}"
+              },
+              {
+                "name": "nome_arquivo",
+                "value": "={{ $('DEFINE-ID-NOME_ARQUIVO').item.json.nome_arquivo }}"
+              },
+              {
+                "name": "data_arquivo",
+                "value": "={{ $('CONVERTE O  OBJETO').item.json.output.data_documento }}"
+              },
+              {
+                "name": "tipo_documento",
+                "value": "={{ $('CONVERTE O  OBJETO').item.json.output.tipo_documento }}"
+              },
+              {
+                "name": "numero_documento",
+                "value": "={{ $('CONVERTE O  OBJETO').item.json.output.numero_documento }}"
+              },
+              {
+                "name": "nome_padronizado",
+                "value": "={{ $('CONVERTE O  OBJETO').item.json.output.nome_padronizado }}"
+              },
+              {
+                "name": "Rs_documento",
+                "value": "={{ $('DEFINE FINALIDADE DO DOCUMENTO').item.json.output }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        2256,
+        208
+      ],
+      "id": "742afc04-e753-4e40-818c-a7ee5dd3a905",
+      "name": "Default Data Loader2"
+    },
+    {
+      "parameters": {
+        "chunkSize": 3000,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        2304,
+        448
+      ],
+      "id": "cce42924-9b30-4950-9fe2-7e53af924eb6",
+      "name": "Recursive Character Text Splitter1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3552,
+        160
+      ],
+      "id": "f29bb397-3a3e-4209-b53b-b0815a1b3f12",
+      "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        848,
+        256
+      ],
+      "id": "0e143449-5370-4dd9-9762-a3a1bfefdb9d",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "wbOyQZXNXiMWrIOE",
+          "name": "Openai-Credencial-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -256,
+        16
+      ],
+      "id": "359bdc3f-272e-4729-8456-2923b8762313",
+      "name": "PERCORRE OS DOCUMENTOS"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1HcYgH8hV7f_VJi4Yskx9Qg-rzofBZKR8",
+          "mode": "list",
+          "cachedResultName": "IFBA-DOCUMENTOS",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1HcYgH8hV7f_VJi4Yskx9Qg-rzofBZKR8"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -512,
+        16
+      ],
+      "id": "3dbb4920-e70d-4cd5-8d3e-19d44b7974ac",
+      "name": "RECEBE DOCUMENTOS DRIVE",
+      "retryOnFail": false,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "2r0Rv3GEMX05VW4n",
+          "name": "Google Drive -PEDROTCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "385d376f-d5ee-43aa-860f-95943ca8f094",
+              "name": "id_arquivo",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f8d7581f-4f1b-40a6-93d8-49e8b2d39ed6",
+              "name": "nome_arquivo",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -64,
+        48
+      ],
+      "id": "65c99373-9a11-48a0-9b23-b0e14c1cdf63",
+      "name": "DEFINE-ID-NOME_ARQUIVO"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('DEFINE-ID-NOME_ARQUIVO').item.json.id_arquivo }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        128,
+        48
+      ],
+      "id": "e6329c52-cdc5-4850-a6c6-fa0e753b689f",
+      "name": "BAIXA O DOCUMENTO",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "2r0Rv3GEMX05VW4n",
+          "name": "Google Drive -PEDROTCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        320,
+        48
+      ],
+      "id": "6444cd8d-e8a3-40b4-aa28-2cd39781d77e",
+      "name": "EXTRAI O CONTEUDO"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ==================================================================\n// 1. Variável com o Texto Bruto\n// ==================================================================\nconst textoBruto = $input.first().json.text;\n\n// ==================================================================\n// 2. Lógica de Limpeza\n// ==================================================================\n\nlet cleanText = textoBruto;\n\n// 2.0 - REMOÇÃO DE CARACTERES NULOS (Unicode Escape Sequence Error)\n// Remove o caractere \\u0000 que causa erro no PostgreSQL/Supabase\ncleanText = cleanText.replace(/\\0/g, '').replace(/\\\\u0000/g, '');\n\n// 2.1 - Padrões de \"lixo\" para remover (LISTA ATUALIZADA)\nconst junkPatterns = [\n    /(\\d{2}\\/\\d{2}\\/\\d{4}\\s+\\d{2}:\\d{2}\\s+SEI\\/IFBA.*?(?:\\d\\/\\d)?)/gs, // Cabeçalho SEI original\n    /\\n\\s*\\d+\\/\\d+\\s*\\n/g,                                             // Numeração de página \"1/3\"\n    /(https?:\\/\\/sei\\.ifba\\.edu\\.br\\/[^\\s]*)/g,                        // Links do SEI no meio\n    /(Documento assinado eletronicamente por.*?decreto.*?)/gs,         // Rodapé Assinatura\n    /(A autenticidade do documento pode ser conferida.*?CRC\\s+[A-F0-9]+.?)/gs, // Validação\n    /23278\\.\\d{6}\\/\\d{4}-\\d{2}\\s+\\d+v\\d/g,                             // Protocolos no final\n    \n    // NOVO: Remove o padrão \"- 4139968 - Edital IFBA\" e variações numéricas\n    /-\\s*\\d+\\s*-\\s*Edital IFBA/g \n];\n\njunkPatterns.forEach(pattern => {\n    cleanText = cleanText.replace(pattern, ' ');\n});\n\n// 2.2 - Remover TODOS os \\n (transformar em linha única)\ncleanText = cleanText.replace(/[\\n\\r]+/g, ' ');\n\n// 2.3 - Remover espaços duplicados/triplos gerados\ncleanText = cleanText.replace(/\\s+/g, ' ');\n\n// 2.4 - Trim (limpar começo e fim)\ncleanText = cleanText.trim();\n\n\n// ==================================================================\n// 3. Retorno\n// ==================================================================\nreturn [\n    { \n        json: { \n            cleanText: cleanText \n        } \n    }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        496,
+        48
+      ],
+      "id": "2242af7e-415b-4520-ae97-788d0a1b7f57",
+      "name": "REMOVE LIXO DE CONTEXTO"
+    },
+    {
+      "parameters": {
+        "jsCode": "let text = $input.first().json.cleanText || \"\";\n\n// ==================================================================\n// 1. LIMPEZA PRELIMINAR (Normalização)\n// ==================================================================\n// Remove caracteres estranhos e normaliza quebras de linha\ntext = text.replace(/\\r\\n/g, \"\\n\").replace(/\\r/g, \"\\n\");\n// Garante espaço após pontuação se estiver colado (ex: \"Fim.1. Inicio\" -> \"Fim. 1. Inicio\")\ntext = text.replace(/([a-z]\\.)(\\d)/gi, \"$1 $2\");\n\n// ==================================================================\n// 2. MARCAÇÃO DE TÍTULOS (REGEX INTELIGENTE)\n// ==================================================================\n\n/*\n  TRUQUE DO SUCESSO:\n  Usamos \"Positive Lookahead\" (?=[A-Z]) -> O número TEM que ter letra depois.\n  Usamos \"Negative Lookbehind\" (?<!R\\$) -> O número NÃO pode ter R$ antes.\n*/\n\n// A. Títulos Principais (H2 - ##)\n// Ex: \"1. APRESENTAÇÃO\", \"10. DISPOSIÇÕES\"\n// Regra: Numero + Ponto + Espaço + Letras Maiúsculas (pelo menos 3)\ntext = text.replace(\n    /(?:^|\\s)(\\d{1,2}\\.\\s*[A-ZÁÉÍÓÚÇÃÕ\\s-]{3,})(?=\\s|$)/g, \n    '\\n\\n## $1' \n);\n\n// B. Anexos (H2 - ##)\n// Ex: \"Anexo 01 - Barema\"\n// Regra: \"Anexo\" + Numero + Traço (Isso evita \"conforme Anexo 01\")\ntext = text.replace(\n    /(?:^|\\s)(Anexo\\s+\\d+\\s*[-–]\\s*.*?)(?=\\n|$)/gi, \n    '\\n\\n## $1'\n);\n\n// C. Subtítulos (H3 - ###) -- AQUI ESTAVA O ERRO DO DINHEIRO\n// Ex: \"3.1\", \"5.10\"\n// Regra:\n// 1. (?<!...) : Não pode ter R$, nº, Lei, Art antes.\n// 2. (\\d\\.\\d) : O número em si.\n// 3. \\s+      : Tem que ter espaço depois.\n// 4. (?=[A-Z]): TEM QUE TER UMA LETRA DEPOIS (Isso mata o \"60.00 0,00\")\ntext = text.replace(\n    /(?:^|\\s)(?<!R\\$\\s)(?<!nº\\s)(?<!Lei\\s)(?<!Art\\.\\s)(\\d{1,2}\\.\\d{1,2}(?:\\.\\d{1,2})?)\\s+(?=[A-ZÁÉÍÓÚÇÃÕ])/gi, \n    '\\n\\n### $1 ' \n);\n\n// ==================================================================\n// 3. REFINAMENTO FINAL\n// ==================================================================\n// Remove espaços duplos criados\ntext = text.replace(/[ ]+/g, \" \");\n// Remove quebras de linha excessivas (max 2)\ntext = text.replace(/\\n{3,}/g, \"\\n\\n\");\n\nreturn [\n    { \n        json: { \n            markdownText: text.trim() \n        } \n    }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        48
+      ],
+      "id": "3abaefb8-ced4-4a94-b696-69b9131f9ea9",
+      "name": "APLICA MARKDOWN"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.markdownText }}",
+        "options": {
+          "systemMessage": "# PERSONA\nVocê é um Analista Jurídico e Administrativo Sênior, especializado em leitura e interpretação de atos oficiais brasileiros (Editais, Portarias, Decretos, Leis e Ofícios).\n\n# OBJETIVO\nSua única função é analisar o texto de entrada fornecido e extrair, com extrema síntese e clareza, o \"Objeto\" ou \"Finalidade Principal\" do documento.\n\n# REGRAS DE ANÁLISE\n1. Ignore preâmbulos longos, considerações iniciais (\"CONSIDERANDO que...\") e assinaturas, focando apenas no núcleo da determinação.\n2. Identifique o tipo de documento (Edital, Portaria, etc.) implicitamente para entender o contexto.\n3. Se for um EDITAL: O objetivo geralmente é a contratação de serviço, aquisição de bens ou seleção de candidatos.\n4. Se for uma PORTARIA: O objetivo geralmente é nomear alguém, instituir um grupo de trabalho ou estabelecer uma regra interna.\n\n# FORMATO DA RESPOSTA\n- Retorne APENAS o objetivo. Não use frases como \"O objetivo deste documento é...\". Vá direto ao ponto.\n- Comece a frase sempre com um VERBO NO INFINITIVO (Ex: Contratar, Instituir, Regulamentar, Nomear, Adquirir).\n- Máximo de 2 parágrafos curtos ou 50 palavras.\n\n# TRATAMENTO DE ERROS\n- Se o texto fornecido for ilegível ou não parecer um documento oficial, responda apenas: \"ERRO: Não foi possível identificar o objetivo do documento.\""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        848,
+        48
+      ],
+      "id": "417d5b0b-6382-4e43-a69f-9e99afe7208b",
+      "name": "DEFINE FINALIDADE DO DOCUMENTO"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('APLICA MARKDOWN').item.json.markdownText }}",
+        "options": {
+          "systemMessage": "=# PERSONA\nVocê é um Auditor de Documentos Regulatórios do IFBA. Sua função é dupla: classificar documentos juridicamente e gerar metadados técnicos para indexação em banco vetorial.\n\n# DADOS DE ENTRADA\n<nome_arquivo>\n{{ $('RECEBE DOCUMENTOS DRIVE').item.json.name }}\n</nome_arquivo>\n\n<conteudo_documento>\n{{ $('APLICA MARKDOWN').item.json.markdownText }}\n</conteudo_documento>\n\n# 1. ALGORITMO DE CLASSIFICAÇÃO (Prioridade Descendente)\nAnalise o conteúdo e classifique o `tipo_documento` seguindo esta ordem estrita:\n\n1. **RETIFICACAO:** Se houver termos como \"Retificação\", \"Errata\", \"Corrigenda\" ou frases de alteração (\"Onde se lia... leia-se\").\n2. **EDITAL:** Se houver \"Edital de Abertura\", \"Processo Seletivo\" e NÃO for retificação.\n3. **ATA:** Se registrar reuniões, sorteios ou resultados preliminares/finais.\n4. **NORMATIVA:** Portarias, Resoluções, Decretos.\n5. **OUTROS:** Caso não se encaixe acima.\n\n# 2. REGRAS DE EXTRAÇÃO DE DADOS\n\n- **data_documento:** A data de assinatura/publicação deste arquivo específico. Formato ISO estrito: `YYYY-MM-DD`.\n\n- **numero_documento:** O IDENTIFICADOR NUMÉRICO do processo/edital.\n    - **Regra de Ouro:** Extraia APENAS números e ano (formato `NUMERO/ANO`).\n    - **NÃO INCLUA TEXTO:** Remova palavras como \"Edital\", \"Retificação\", \"Ata\", \"nº\", \"de\".\n    - **Se for Edital:** Extraia o número dele (ex: texto \"Edital nº 28/2024\" -> extraia \"28/2024\").\n    - **Se for Retificação/Ata:** Extraia o número do EDITAL PAI a que se refere (ex: texto \"Retificação 01 do Edital 28/2024\" -> extraia \"28/2024\").\n\n# 3. LÓGICA DE NOME PADRONIZADO (Para Filtro Vetorial)\n\nVocê deve gerar um campo `nome_padronizado` no formato: `ID_AGRUPADOR | DATA_ISO | TIPO_SIMPLIFICADO`\n\n**Regras para o ID_AGRUPADOR:**\n- Use exatamente o valor extraído em `numero_documento`, mas substitua a barra \"/\" por hífen \"-\".\n- Exemplo: Se `numero_documento` for \"28/2024\", o ID_AGRUPADOR será \"28-2024\".\n\n**Regras para TIPO_SIMPLIFICADO:**\n- Use apenas uma palavra maiúscula: EDITAL, RETIFICACAO, ATA, RESULTADO, NORMATIVA.\n\n**Exemplo Prático:**\n- Arquivo de entrada: \"1ª Retificação do Edital 28/2024.pdf\" (Data: 15/02/2024)\n- Saída esperada:\n   - `numero_documento`: \"28/2024\"\n   - `nome_padronizado`: \"28-2024 | 2024-02-15 | RETIFICACAO\"\n\n# FORMATO DE SAÍDA (JSON)\nRetorne APENAS um objeto JSON válido.\n\n{\n  \"data_documento\": \"YYYY-MM-DD\",\n  \"tipo_documento\": \"String (Classificação completa ex: Retificação, Edital)\",\n  \"numero_documento\": \"String (Apenas NUMERO/ANO ex: 28/2024)\",\n  \"nome_padronizado\": \"String (ID-AGRUPADOR | DATA | TIPO)\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        1168,
+        48
+      ],
+      "id": "2a2ce3dd-75bc-4a2c-be53-bc54f9f1eae6",
+      "name": "CRIADOR DE METADADOS"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ea3f97cb-5850-491f-bb29-15ef7fc8ee05",
+              "name": "output",
+              "value": "={{ $json.output }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1504,
+        48
+      ],
+      "id": "33dc9506-f905-4e5f-829d-c5eb0cef0759",
+      "name": "CONVERTE O  OBJETO"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pega o texto que veio do passo anterior (já com ## e ###)\n// Tenta pegar markdownText ou cleanText (fallback)\nconst text =$('APLICA MARKDOWN').first().json.markdownText;\n\nif (!text) return [];\n\nconst lines = text.split('\\n');\n\nlet result = [];\nlet currentParent = \"CABEÇALHO / PREÂMBULO\";\nlet currentBlock = null;\n\n// REGEX PARA SEPARAR TÍTULO DE CONTEÚDO NA MESMA LINHA\n// Grupo 1: O Título (Números + Letras Maiúsculas + Hifens/Barras)\n// Grupo 2: O resto (O conteúdo misturado)\nconst splitLineRegex = /^(\\d{1,2}\\.\\s*[A-ZÁÉÍÓÚÇÃÕÂÊÔ\\s\\-\\/]+)(.*)/;\n\n// Função para salvar o bloco\nconst saveBlock = () => {\n    if (currentBlock) {\n        const cleanContent = currentBlock.content.trim();\n        \n        // FILTRO DE SEGURANÇA AJUSTADO:\n        // Só deleta se o conteúdo for vazio.\n        // Se o conteúdo tiver texto, salva!\n        if (cleanContent.length < 3) {\n            // Última chance: Se for um Anexo ou um título muito longo que pode ser texto corrido, salva mesmo assim.\n            if (!currentBlock.topic.toLowerCase().includes(\"anexo\") && currentBlock.topic.length < 100) {\n                 return; // Realmente é um título órfão, descarta.\n            }\n        }\n\n        let fullText = \"\";\n        \n        if (currentBlock.type === 'MAIN') {\n             // Formato: \"6. CRONOGRAMA: Será observado...\"\n             fullText = `${currentBlock.topic}: ${cleanContent}`;\n        } else {\n             // Formato: \"4. INSCRIÇÃO > 4.1 Detalhes: texto...\"\n             fullText = `${currentBlock.parent} > ${currentBlock.topic}: ${cleanContent}`;\n        }\n\n        result.push({\n            parent: currentBlock.parent,\n            topic: currentBlock.topic,\n            content: cleanContent,\n            full_text: fullText.trim()\n        });\n    }\n};\n\nlines.forEach(line => {\n    const cleanLine = line.trim();\n    if (!cleanLine) return;\n\n    // A. É TÍTULO PRINCIPAL (## )\n    if (cleanLine.startsWith(\"## \")) {\n        saveBlock(); // Salva o anterior\n\n        let rawText = cleanLine.replace(\"## \", \"\").trim();\n        \n        let title = rawText;\n        let inlineContent = \"\";\n\n        // TENTA SEPARAR TÍTULO E CONTEÚDO\n        // Verifica se a linha tem letras minúsculas (indício de conteúdo)\n        if (/[a-z]/.test(rawText)) {\n            const match = rawText.match(splitLineRegex);\n            if (match) {\n                title = match[1].trim();          // \"6. DO CRONOGRAMA\"\n                inlineContent = match[2].trim();  // \"Será observado...\"\n            }\n        }\n\n        currentParent = title;\n\n        currentBlock = {\n            type: 'MAIN',\n            parent: title,\n            topic: title,\n            content: inlineContent // Já começa com o texto que estava colado!\n        };\n    }\n    // B. É SUBTÓPICO (### )\n    else if (cleanLine.startsWith(\"### \")) {\n        saveBlock(); // Salva o anterior\n\n        let rawText = cleanLine.replace(\"### \", \"\").trim();\n        let topic = rawText;\n        let inlineContent = \"\";\n\n        // Mesma lógica para subtópicos (Ex: \"7.1 - Os resultados...\" -> separa o 7.1 do texto)\n        // Regex simplificado para subtópico (Numero.Numero + Traço opcional + Texto)\n        const subMatch = rawText.match(/^(\\d+\\.\\d+(?:\\.\\d+)?\\s*[-–]?)(.*)/);\n        \n        if (subMatch && /[a-z]/.test(subMatch[2])) {\n             topic = subMatch[1].trim().replace(/[-–]$/, '').trim(); // Remove traço final do tópico\n             inlineContent = subMatch[2].trim();\n        }\n\n        currentBlock = {\n            type: 'SUB',\n            parent: currentParent,\n            topic: topic,\n            content: inlineContent\n        };\n    }\n    // C. É CONTEÚDO (LINHA SOLTA)\n    else {\n        if (currentBlock) {\n            currentBlock.content += \" \" + cleanLine;\n        } else {\n            // Texto introdutório\n            currentBlock = {\n                type: 'MAIN',\n                parent: \"INTRODUÇÃO\",\n                topic: \"INTRODUÇÃO\",\n                content: cleanLine\n            };\n        }\n    }\n});\n\nsaveBlock(); // Salva o último\n\nreturn result.map(i => ({ json: i }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1728,
+        48
+      ],
+      "id": "88d3a971-d5fd-4f24-bccb-ff5040d17646",
+      "name": "SEPARAÇÃO DOS CHUNKS"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "tableName": {
+          "__rl": true,
+          "value": "documents",
+          "mode": "list",
+          "cachedResultName": "documents"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.3,
+      "position": [
+        2048,
+        48
+      ],
+      "id": "bfaa661a-f13d-41ab-920a-2be09cd1b3d5",
+      "name": "INSERE NO BANCO DE DADOS",
+      "credentials": {
+        "supabaseApi": {
+          "id": "M0oJTzMge15367k4",
+          "name": "Supabase-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "useCustomSchema": true,
+        "tableId": "arquivos",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "id_drive",
+              "fieldValue": "={{ $json.id_arquivo }}"
+            },
+            {
+              "fieldId": "nome_arquivo",
+              "fieldValue": "={{ $json.nome_arquivo }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        576,
+        -144
+      ],
+      "id": "9e5d940f-ed77-472a-b3a4-13799972b962",
+      "name": "INSERE NO BANCO",
+      "credentials": {
+        "supabaseApi": {
+          "id": "M0oJTzMge15367k4",
+          "name": "Supabase-PEDRO-TCC"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        176,
+        -160
+      ],
+      "id": "ca762fdc-0823-4f2b-a41f-499744cddc9c",
+      "name": "CABOU!!!"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        768,
+        -192
+      ],
+      "id": "232a6ce2-5d10-4659-8212-e6e943d051fd",
+      "name": "CABOU!!!1"
+    }
+  ],
+  "pinData": {
+    "RECEBE DOCUMENTOS DRIVE": [
+      {
+        "json": {
+          "parents": [
+            "1HcYgH8hV7f_VJi4Yskx9Qg-rzofBZKR8"
+          ],
+          "lastModifyingUser": {
+            "displayName": "Pedro Henrique",
+            "kind": "drive#user",
+            "me": true,
+            "permissionId": "06580286040691314403",
+            "emailAddress": "pahgames.com@gmail.com",
+            "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocIYn19tCoSXhMTQvxetptLEKN7_C8rspNdfFEYj50BM6UHNeQ=s64"
+          },
+          "owners": [
+            {
+              "displayName": "Pedro Henrique",
+              "kind": "drive#user",
+              "me": true,
+              "permissionId": "06580286040691314403",
+              "emailAddress": "pahgames.com@gmail.com",
+              "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocIYn19tCoSXhMTQvxetptLEKN7_C8rspNdfFEYj50BM6UHNeQ=s64"
+            }
+          ],
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "11684875771824661427",
+              "type": "user",
+              "emailAddress": "diegobnh@gmail.com",
+              "role": "writer",
+              "displayName": "diegobnh",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXwMLuQiNXgnHyVuwC3LOnt-Rc4xalY6SvOMMK-F8lfg7bW9O4t0w=s64",
+              "deleted": false,
+              "pendingOwner": false
+            },
+            {
+              "kind": "drive#permission",
+              "id": "06580286040691314403",
+              "type": "user",
+              "emailAddress": "pahgames.com@gmail.com",
+              "role": "owner",
+              "displayName": "Pedro Henrique",
+              "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocIYn19tCoSXhMTQvxetptLEKN7_C8rspNdfFEYj50BM6UHNeQ=s64",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "permissionIds": [
+            "11684875771824661427",
+            "06580286040691314403"
+          ],
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "kind": "drive#file",
+          "id": "1snAImITWRxNx5m6BEMVrLg-UA9AaOLrj",
+          "name": "EDITAL 011-2025.pdf",
+          "mimeType": "application/pdf",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "version": "2",
+          "webContentLink": "https://drive.google.com/uc?id=1snAImITWRxNx5m6BEMVrLg-UA9AaOLrj&export=download",
+          "webViewLink": "https://drive.google.com/file/d/1snAImITWRxNx5m6BEMVrLg-UA9AaOLrj/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/application/pdf",
+          "hasThumbnail": true,
+          "thumbnailLink": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOXENS70j-k_3wPQZqlC2UQXoPfsNW6WW3x2m0QncdvjbFxizc83yfX_0XjNPRly-AFHQduBT5twF1qoCCnAuUMh7O6offsjo7TgEhOKAhW0qGwHQ=s220",
+          "thumbnailVersion": "1",
+          "viewedByMe": true,
+          "viewedByMeTime": "2026-01-24T21:10:21.588Z",
+          "createdTime": "2026-01-24T21:10:21.588Z",
+          "modifiedTime": "2026-01-24T20:22:47.000Z",
+          "modifiedByMeTime": "2026-01-24T20:22:47.000Z",
+          "modifiedByMe": true,
+          "shared": true,
+          "ownedByMe": true,
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "originalFilename": "EDITAL 011-2025.pdf",
+          "fullFileExtension": "pdf",
+          "fileExtension": "pdf",
+          "md5Checksum": "14692d30ef9dcb104c08cfc2e9bbd04b",
+          "sha1Checksum": "05c378f843393fc9c51aa376cb91d093febe4048",
+          "sha256Checksum": "487e46c68086def07f61b63b426b43ad37c64ed94649c39ca480a641bb947751",
+          "size": "240099",
+          "quotaBytesUsed": "240099",
+          "headRevisionId": "0B_9Iiy4CcurScTV5Z0hQMDlZUEFJOEJYREl4QXlmeS8rQWdBPQ",
+          "isAppAuthorized": false,
+          "inheritedPermissionsDisabled": false
+        }
+      },
+      {
+        "json": {
+          "parents": [
+            "1HcYgH8hV7f_VJi4Yskx9Qg-rzofBZKR8"
+          ],
+          "lastModifyingUser": {
+            "displayName": "Pedro Henrique",
+            "kind": "drive#user",
+            "me": true,
+            "permissionId": "06580286040691314403",
+            "emailAddress": "pahgames.com@gmail.com",
+            "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocIYn19tCoSXhMTQvxetptLEKN7_C8rspNdfFEYj50BM6UHNeQ=s64"
+          },
+          "owners": [
+            {
+              "displayName": "Pedro Henrique",
+              "kind": "drive#user",
+              "me": true,
+              "permissionId": "06580286040691314403",
+              "emailAddress": "pahgames.com@gmail.com",
+              "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocIYn19tCoSXhMTQvxetptLEKN7_C8rspNdfFEYj50BM6UHNeQ=s64"
+            }
+          ],
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "11684875771824661427",
+              "type": "user",
+              "emailAddress": "diegobnh@gmail.com",
+              "role": "writer",
+              "displayName": "diegobnh",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXwMLuQiNXgnHyVuwC3LOnt-Rc4xalY6SvOMMK-F8lfg7bW9O4t0w=s64",
+              "deleted": false,
+              "pendingOwner": false
+            },
+            {
+              "kind": "drive#permission",
+              "id": "06580286040691314403",
+              "type": "user",
+              "emailAddress": "pahgames.com@gmail.com",
+              "role": "owner",
+              "displayName": "Pedro Henrique",
+              "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocIYn19tCoSXhMTQvxetptLEKN7_C8rspNdfFEYj50BM6UHNeQ=s64",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "permissionIds": [
+            "11684875771824661427",
+            "06580286040691314403"
+          ],
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "kind": "drive#file",
+          "id": "1oc2ZTL-yRON25lraYr_B9x4o1gGbErxU",
+          "name": "EDITAL 010-2025.pdf",
+          "mimeType": "application/pdf",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "version": "3",
+          "webContentLink": "https://drive.google.com/uc?id=1oc2ZTL-yRON25lraYr_B9x4o1gGbErxU&export=download",
+          "webViewLink": "https://drive.google.com/file/d/1oc2ZTL-yRON25lraYr_B9x4o1gGbErxU/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/application/pdf",
+          "hasThumbnail": true,
+          "thumbnailLink": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNAtiXq3KdT3va9JGuQRpJmnXIAP3AwBgDOZ1enNSH3Qsm4wPeGDDwNnJIYSr5OsEWNmQFUoAQRqa5f5wY3et48PZeiCPQEbIwes7O0wUGbNcAiMg=s220",
+          "thumbnailVersion": "1",
+          "viewedByMe": true,
+          "viewedByMeTime": "2026-01-24T21:10:21.963Z",
+          "createdTime": "2026-01-24T21:10:21.963Z",
+          "modifiedTime": "2026-01-24T20:22:47.000Z",
+          "modifiedByMeTime": "2026-01-24T20:22:47.000Z",
+          "modifiedByMe": true,
+          "shared": true,
+          "ownedByMe": true,
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "originalFilename": "EDITAL 010-2025.pdf",
+          "fullFileExtension": "pdf",
+          "fileExtension": "pdf",
+          "md5Checksum": "f0a04ca9cddfa1e9a35bfd72add6f289",
+          "sha1Checksum": "164c823dc6cd4c36ac38fecd9370c546afaa4d8f",
+          "sha256Checksum": "6ae000ab3b396241633261626a2058e8e7618077d20eeda51616f126813223f9",
+          "size": "232337",
+          "quotaBytesUsed": "232337",
+          "headRevisionId": "0B_9Iiy4CcurSUUN2ejl2ME9UK2JHSDZkMTlLTlR3WUNHM1dnPQ",
+          "isAppAuthorized": false,
+          "inheritedPermissionsDisabled": false
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Supabase Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Vector Store": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "CRIADOR DE METADADOS",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        []
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "INSERE NO BANCO DE DADOS",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader2": {
+      "ai_document": [
+        [
+          {
+            "node": "INSERE NO BANCO DE DADOS",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter1": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader2",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "DEFINE FINALIDADE DO DOCUMENTO",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PERCORRE OS DOCUMENTOS": {
+      "main": [
+        [
+          {
+            "node": "CABOU!!!",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "DEFINE-ID-NOME_ARQUIVO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RECEBE DOCUMENTOS DRIVE": {
+      "main": [
+        [
+          {
+            "node": "PERCORRE OS DOCUMENTOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DEFINE-ID-NOME_ARQUIVO": {
+      "main": [
+        [
+          {
+            "node": "BAIXA O DOCUMENTO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BAIXA O DOCUMENTO": {
+      "main": [
+        [
+          {
+            "node": "EXTRAI O CONTEUDO",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "INSERE NO BANCO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EXTRAI O CONTEUDO": {
+      "main": [
+        [
+          {
+            "node": "REMOVE LIXO DE CONTEXTO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "REMOVE LIXO DE CONTEXTO": {
+      "main": [
+        [
+          {
+            "node": "APLICA MARKDOWN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "APLICA MARKDOWN": {
+      "main": [
+        [
+          {
+            "node": "DEFINE FINALIDADE DO DOCUMENTO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DEFINE FINALIDADE DO DOCUMENTO": {
+      "main": [
+        [
+          {
+            "node": "CRIADOR DE METADADOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CRIADOR DE METADADOS": {
+      "main": [
+        [
+          {
+            "node": "CONVERTE O  OBJETO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CONVERTE O  OBJETO": {
+      "main": [
+        [
+          {
+            "node": "SEPARAÇÃO DOS CHUNKS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SEPARAÇÃO DOS CHUNKS": {
+      "main": [
+        [
+          {
+            "node": "INSERE NO BANCO DE DADOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "INSERE NO BANCO DE DADOS": {
+      "main": [
+        [
+          {
+            "node": "PERCORRE OS DOCUMENTOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "INSERE NO BANCO": {
+      "main": [
+        [
+          {
+            "node": "CABOU!!!1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "8e6131ce-51cc-403d-a539-d48cff2abfcc",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "869dc54efdb6d05a8a1179e8f9bd330b0aff5a44139076da0474ea57ecf93f39"
+  },
+  "id": "BqmnyLNSxXb5OoRO",
+  "tags": []
+}
