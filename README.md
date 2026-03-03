@@ -43,12 +43,6 @@ Os resultados obtidos durante os protocolos de validação com discentes e servi
 | **Média de Facilidade de Uso (Escala 1-5)** | 4.0  |
 | **Ausência de Contradições Lógicas** | 77,78%  |
 
-## 📂 Estrutura do Repositório
-
-* `/workflows`: Templates JSON para importação no n8n (Pipeline de Chat e Ingestão).
-* `/scripts`: Códigos JavaScript para tratamento de caracteres nulos e normalização de texto.
-* `/prompts`: Prompts de sistema utilizados para configurar a persona e as regras de cada microagente.
-
 ---
 
 **Trabalho de Conclusão de Curso**
